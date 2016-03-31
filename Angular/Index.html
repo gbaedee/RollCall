@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,10 +12,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
 
     <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.29/angular.min.js"></script>
-    <script src="Angular/Controller.js"></script>
+
+
     <style>
 
         .container
@@ -50,11 +49,28 @@
 </head>
 <body>
 
-<div class = "container jumbotron full center-block" role="main" ng-app="app">
+<!--<div class = "jumbotron full center-block" role="main" ng-app="app">-->
 
-    <div ng-view></div>
+    <div ng-view> </div>
 
-</div>
+<!--</div>-->
+<script src="">
+
+    angular.module('app',[])
+            .config(function($routeProvider){
+              $routeProvider
+                      .when('/', {
+                          templateUrl: 'Views/Register.html',
+                          controller: 'RegisterCtrl'
+                      })
+                      .otherwise({redirect:'/'});
+           })
+
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<!--<script src="Angular/Controller.js"></script>-->
+
 
 </body>
 
